@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Blog.Context;
+using Blog.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +32,8 @@ namespace Blog
         {
             services.AddDbContext<BlogDbContext>(
                 builder => builder.UseSqlServer(Configuration["connectionString"]));
+            services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<BlogDbContext>();
             services.AddMvc();
         }
 

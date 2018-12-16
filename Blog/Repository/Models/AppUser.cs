@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace Blog.Models
+namespace Repository.Models
 {
     public class AppUser : IdentityUser
     {
@@ -20,8 +21,11 @@ namespace Blog.Models
         [StringLength(50)]
         public string Name { get; set; }
 
+        [DisplayName("Image")]
         public string ImageUrl { get; set; }
         public bool IsImage { get; set; }
+
+        public ICollection<Post> Posts { get; set; }
 
     }
 }

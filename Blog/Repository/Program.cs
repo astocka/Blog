@@ -7,9 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Repository;
 
-namespace Blog
+namespace Repository
 {
     public class Program
     {

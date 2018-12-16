@@ -5,17 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
-    <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\lib\bootstrap\" />
+    <Compile Remove="Migrations\20181216142111_Initial.cs" />
+    <Compile Remove="Migrations\20181216142111_Initial.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

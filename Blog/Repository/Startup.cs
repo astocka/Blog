@@ -1,13 +1,18 @@
-﻿using Repository.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Repository.Context;
+using Repository.Models;
 
-namespace Blog
+namespace Repository
 {
     public class Startup
     {
@@ -19,7 +24,6 @@ namespace Blog
             configurationBuilder.AddXmlFile("appsettings.xml");
             Configuration = configurationBuilder.Build();
         }
-
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940

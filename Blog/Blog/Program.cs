@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Repository;
+using Repository.Context;
 
 namespace Blog
 {
@@ -17,6 +19,7 @@ namespace Blog
         {
             BuildWebHost(args).Run();
         }
+       
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)

@@ -19,8 +19,10 @@ namespace Repository.Models
         public string Description { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [DisplayName("Posted on")]
         public DateTime PostedOn { get; set; }
 
+        [DisplayName("Post")]
         public int PostId { get; set; }
         [ForeignKey("PostId")]
         public Post Post { get; set; }

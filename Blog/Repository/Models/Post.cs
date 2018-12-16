@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace Repository.Models
         public bool Modified { get; set; }
 
         [Required]
+        [DisplayName("Username")]
         public string AppUserId { get; set; }
         [ForeignKey("AppUserId")]
         public AppUser AppUser { get; set; }
@@ -31,6 +33,7 @@ namespace Repository.Models
 
         public ICollection<PostTag> Tags { get; set; }
 
+        [DisplayName("Comments")]
         public int CommentId { get; set; }
         public ICollection<Comment> Comments { get; set; }
         

@@ -57,5 +57,30 @@ namespace Blog.Controllers
             }
             return View(viewModel);
         }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await SignInManager.PasswordSignInAsync(viewModel.Login,
+                    viewModel.Password, viewModel.RememberMe, false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Wrong login or password");
+                }
+            }
+            return View(viewModel);
+        }
     }
 }

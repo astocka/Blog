@@ -24,8 +24,6 @@ namespace Repository.Models
 
         [DisplayName("Image")]
         public string ImageUrl { get; set; }
-        [NotMapped]
-        public bool IsImage { get; set; }
 
         public ICollection<Post> Posts { get; set; }
 
